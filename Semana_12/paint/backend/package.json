@@ -1,0 +1,21 @@
+{
+  "name": "chat-pinturillo",
+  "version": "1.0.0",
+  "description": "Chat para el juego de pinturillo",
+  "main": "index.js",
+  "author": "Jesus Cueva",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.0.1"
+  },
+  "scripts": {
+    "start": "node ./src/index.js",
+    "start:dev": "nodemon --exec babel-node ./src/index.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.13.15"
+  }
+}

@@ -1,0 +1,388 @@
+swagger: '2.0'
+info:
+  description: 'Documentación de la api de libreria'
+  version: '1.0'
+  title: LibreriaFlask
+  termsOfService: "hhtp://www.google.com" #Pa los TyC
+  contact: {
+    name: "Eduardo de rivero",
+    email: "jcueva12380@gmail.com"
+  }
+  license: {
+    name: "Apache 2.0",
+    url: "hhtp://www.apache...."
+  }
+host: 127.0.0.1:5000
+basePath: /
+schemes:
+- https
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /autores:
+    get:
+      description: Ruta que devuelve todos los autores de la base de datos #funcion detallada de ese endpoing
+      summary: devuelve todos los autores #resumen
+      tags:
+      - Autor
+      operationId: /autores
+      deprecated: false # sirve para inhabilitar el endpoint
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+          headers: {}
+    post:
+      description: Ruta para agregar un nuevo autor
+      summary: Crea un nuevo autor
+      tags:
+      - Autor
+      operationId: Post/autores
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/~1autoresrequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /autor/{id}:
+    get:
+      description: Ruta que devuelve un autor segun su id
+      summary: /autor/:id
+      tags:
+      - Autor
+      operationId: /autor/:id
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Id del autor a buscar"
+        required: True
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: ''
+          headers: {}
+    put:
+      description: Ruta para poder edictar un autor
+      summary: /autor/:id
+      tags:
+      - Autor
+      operationId: Put/autor/:id
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Id del autor a Actualizar"
+        required: True
+        type: "integer"
+        format: "int64"      
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/~1autor~1%3Aidrequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+    delete:
+      description: Ruta para eliminar un autor segun su id
+      summary: /autor/:id1
+      tags:
+      - Autor
+      operationId: /autor/:id1
+      deprecated: false
+      produces:
+      - application/json
+      parameters: 
+      - name: "id"
+        in: "path"
+        description: "Id del autor a Eliminar"
+        required: True
+        type: "integer"
+        format: "int64"      
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /categorias:
+    get:
+      description: Ruta que devuelve todas las categorias
+      summary: /categorias
+      tags:
+      - Categoria
+      operationId: /categorias
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /categoria:
+    post:
+      description: Ruta que me permite crear nuevas categorias
+      summary: /categoria
+      tags:
+      - Categoria
+      operationId: /categoria
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/~1categoriarequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /libro:
+    post:
+      description: Ruta para crear un nuevo libro
+      summary: /ibro
+      tags:
+      - Libro
+      operationId: /ibro
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/~1ibrorequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /libros:
+    get:
+      description: Esta ruta es para poder traer todos los libros que hay
+      summary: /libros
+      tags:
+      - Libro
+      operationId: /libros
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /buscar:
+    get:
+      description: filtrar los librosss
+      summary: /buscar
+      tags:
+      - Libro
+      operationId: /buscar
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: palabra
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /sede:
+    post:
+      description: metodo para poder crear una nueva sede
+      summary: /sede
+      tags:
+      - Sede
+      operationId: /sede
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /sedes:
+    get:
+      description: ruta para poder mostrar todos las sedes
+      summary: /sedes
+      tags:
+      - Sede
+      operationId: /sedes
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /sedeLibro/1:
+    get:
+      description: ruta para poder devolver los libros dependiendo de la sede
+      summary: /sedeLibro/:id
+      tags:
+      - Sede
+      operationId: /sedeLibro/:id
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /busquedaLibroSedeCat:
+    get:
+      description: ruta para buscar libros mediante su categoria y sede
+      summary: /busquedaLibroSedeCat
+      tags:
+      - Sede
+      operationId: /busquedaLibroSedeCat
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: categoria
+        in: query
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: sede
+        in: query
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /registrarSedesLibro:
+    post:
+      description: Ruta para registrar sedes en los libros
+      summary: /registrarSedesLibro
+      tags:
+      - SedeLibro
+      operationId: /registrarSedesLibro
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/~1registrarSedesLibroRequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+definitions:
+  /autoresrequest:
+    title: /autoresrequest
+    type: object
+    properties:
+      autor_nombre:
+        type: string
+    required:
+    - autor_nombre
+  /autor/:idrequest:
+    title: /autor/:idrequest
+    type: object
+    properties:
+      autor_nombre:
+        type: string
+    required:
+    - autor_nombre
+  /categoriarequest:
+    title: /categoriarequest
+    type: object
+    properties:
+      categoria_descripcion:
+        type: string
+    required:
+    - categoria_descripcion
+  /ibrorequest:
+    title: /ibrorequest
+    type: object
+    properties:
+      libro_nombre:
+        type: string
+      libro_cant:
+        type: integer
+        format: int32
+      libro_edicion:
+        type: string
+      autor_id:
+        type: integer
+        format: int32
+      categoria_id:
+        type: integer
+        format: int32
+    required:
+    - libro_nombre
+    - libro_cant
+    - libro_edicion
+    - autor_id
+    - categoria_id
+  /registrarSedesLibroRequest:
+    title: /registrarSedesLibroRequest
+    type: object
+    properties:
+      libro_id:
+        type: integer
+        format: int32
+      sedes:
+        type: array
+        items:
+          $ref: '#/definitions/Sede'
+    required:
+    - libro_id
+    - sedes
+  Sede:
+    title: Sede
+    type: object
+    properties:
+      sede_id:
+        type: integer
+        format: int32
+    required:
+    - sede_id
+tags:
+- name: Autor
+- name: Categoria
+- name: Libro
+- name: Sede
+- name: SedeLibro

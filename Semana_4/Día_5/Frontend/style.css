@@ -1,0 +1,206 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+.font {
+  font-family: "Akaya Telivigala", cursive;
+}
+* {
+  font-family: "Akaya Telivigala", cursive;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "Akaya Telivigala", cursive;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  background-color: rgb(206, 206, 206);
+}
+.btn {
+  border: 0;
+  padding: 10px;
+  width: 90%;
+}
+#getProductos {
+  background-color: rgb(60, 111, 155);
+}
+#addProductos {
+  background-color: rgb(62, 182, 68);
+}
+.center {
+  justify-content: center;
+}
+button:focus {
+  outline: 0;
+}
+.btn-tabla {
+  border: 0;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  margin: 1px;
+  width: 49%;
+}
+.warning {
+  background-color: rgb(223, 176, 21);
+}
+.danger {
+  background-color: rgb(231, 72, 72);
+}
+.row {
+  display: flex;
+  width: 100%;
+}
+.m {
+  margin: 0.5em;
+}
+#productos {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#productos td,
+#productos th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#productos tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#productos tr:hover {
+  background-color: #ddd;
+}
+
+#productos th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #e7874f;
+  color: white;
+}
+.tabla {
+  width: 90%;
+  margin: 100px auto;
+}
